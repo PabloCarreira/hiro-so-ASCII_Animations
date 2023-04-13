@@ -1,5 +1,4 @@
 import '../css/style.css';
-import P5 from 'p5'
 
 let canvas = document.querySelector("#mainCanvas")
 console.log(canvas)
@@ -32,6 +31,6 @@ let s = (p5) => {
 }
 }
 
-new P5(s, canvas);
+new p5(s, canvas);
 
 // context = canvas.getContext('2d' [, { [ alpha: true ] [, desynchronized: false ] [, colorSpace: 'srgb'] [, willReadFrequently: false ]} ])
