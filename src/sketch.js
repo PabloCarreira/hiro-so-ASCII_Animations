@@ -1,31 +1,37 @@
 import '../css/style.css';
-import {sketch} from 'p5js-wrapper';
+import P5 from 'p5'
 
-let sizes = {
+let canvas = document.querySelector("#mainCanvas")
+console.log(canvas)
+console.log(p5)
+
+let s = (p5) => {    
+  let sizes = {
     width:parent.innerWidth,
     height:parent.innerHeight,
-}
+  }
+  console.log(sizes)
+  p5.setup = () => {
+    p5.pixelDensity(1)
+    p5.createCanvas(sizes.width, sizes.height)
+    p5.frameRate(5)
+  }
 
-console.log(sizes)
+  p5.draw = () => {
+    p5.background('blue')
+    p5.circle(30,30,30)
 
-sketch.setup = function(){
-  createCanvas (sizes.width, sizes.height);
-}
 
-sketch.draw= function(){
-  background(100);
-  fill(255, 0, 0);
-  noStroke();
-  rectMode(CENTER);
-  rect(mouseX, mouseY, 50, 50);
-}
 
-sketch.windowResized = function(){
+  }
+
+  p5.windowResized = function(){
     sizes.width = parent.innerWidth;
     sizes.height = parent.innerHeight;
-    sketch.resizeCanvas(sizes.width,sizes.height)
+    p5.resizeCanvas(sizes.width,sizes.height)
+}
 }
 
-sketch.mousePressed = function(){
-  console.log('here');
-}
+new P5(s, canvas);
+
+// context = canvas.getContext('2d' [, { [ alpha: true ] [, desynchronized: false ] [, colorSpace: 'srgb'] [, willReadFrequently: false ]} ])
