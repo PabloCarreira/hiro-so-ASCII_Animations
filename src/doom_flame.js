@@ -1,13 +1,12 @@
 import { clamp, map } from './num.js'
 import { CSS4 } from './color.js'
 import { mix, smoothstep } from './num.js'
-import '../css/style.css';
 
-export const settings = { fps : 30, backgroundColor : 'black', color : 'white' }
+export const settings = { fps : 30, backgroundColor : 'transparent', color : '#ff4800' }
 
 const { min, max, sin, floor } = Math
 
-const flame = '...::/\\/\\/\\+=*abcdef01XYZ#'
+const flame = '...::/\\/\\/\\hiroHIRO-SO#'
 let cols, rows
 
 const noise = valueNoise()
