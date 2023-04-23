@@ -2,17 +2,35 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/hiro-so-ASCII_Animations/assets/favicon.9054faa4.svg" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.9054faa4.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>hiro - HeroAnimations</title>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
-      </style>
-    <script type="module" crossorigin src="/hiro-so-ASCII_Animations/assets/main.13219f18.js"></script>
-    <link rel="stylesheet" href="/hiro-so-ASCII_Animations/assets/main.9390e7c8.css">
+    <style media="screen, print">
+      @font-face {
+        font-family: 'AeonikMono-Regular';
+    src: url('/assets/AeonikMono-Regular.03e82fef.woff2') format('woff2'),
+        url('/assets/AeonikMono-Regular.fd94fdc8.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+      }
+    </style>
+    <script type="module" crossorigin src="/assets/main.dbff6d03.js"></script>
+    <link rel="stylesheet" href="/assets/main.a11e226a.css">
   </head>
   <body>
-    <div class="hiro_Title"><div class="hiro_slashes">/-/</div><div class="hiro_characters">iro</div></div>
+    <div class="play_holder">
+      <pre id="ASCII-Holder" class="flameAnimation"></pre>
+    </div>
+    <h1 class="h1-rebrand-v2">BUILD WEB3 ON BITCOIN.</h1>
+
+    <div class="controlsHolder">
+      <input class="slider01" id="sliderValue01" type="range" min="1" max="40" step="1">
+      <label class="label01" for="sliderValue01">Volume <output id="valuePrinted"></output></label>
+      <input class="input01" type="text" id="inputValue01" placeholder="...::/\\+=*abcdef01XYZ#">
+      <label class="label02" for="sliderValue01">characters</label>
+
+    </div>
     
   </body>
 </html>
