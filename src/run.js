@@ -3,11 +3,11 @@ Runner
 */
 
 // Both available renderers are imported
-import textRenderer from './textrenderer.js'
-import canvasRenderer from './canvasrenderer.js'
-import FPS from './fps.js'
-import storage from './storage.js'
-import RUNNER_VERSION from './version.js'
+import textRenderer from './core/textrenderer.js'
+import canvasRenderer from './core/canvasrenderer.js'
+import FPS from './core/fps.js'
+import storage from './core/storage.js'
+import RUNNER_VERSION from './core/version.js'
 
 export { RUNNER_VERSION }
 
@@ -71,6 +71,7 @@ export function run(program, runSettings, userData = {}) {
 		// Name of local storage key
 		const LOCAL_STORAGE_KEY_STATE = 'currentState'
 
+		
 		if (settings.restoreState) {
 			storage.restore(LOCAL_STORAGE_KEY_STATE, state)
 			state.cycle++ // Keep track of the cycle count for debugging purposes

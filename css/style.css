@@ -1,15 +1,20 @@
+/* @font-face {
+  font-family: AeonikMono;
+  src: url("../fonts/AeonikMono.woff");
+} */
+
 html,
 body {
   margin: 0;
   padding: 0;
-  align-items: center;
   text-align: center;
-  background-color:#000;
+  background-color:#f1f0ed;
 }
 
-canvas, pre {
-  font-family: "Simple Console", monospace;
+.holderAnimation{
   line-height: 1.2;
+  font-family: "AeonikMono-Regular", monospace;
+  overflow: hidden;
   position: absolute;
   left: 0;
   top: 0;
@@ -17,12 +22,12 @@ canvas, pre {
   overflow: hidden;
   width: 100%;
   height: 100%;
-  color:#ff4800;
+  z-index:1;
 }
 
 .hiro_Title{
   position:absolute;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'AeonikMono-Regular';
   width:100%;
   height: 100vh;
   font-size:62px;
@@ -31,11 +36,24 @@ canvas, pre {
   display:flex;
   justify-content: center;
   align-items: center;
-  
+  pointer-events:none;
+}
+
+.h1-rebrand-v2 {
+  position:absolute;
+  color: #0d0c0c;
+  letter-spacing: -.04em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  font-family: Aeonik,sans-serif;
+  font-size: 100px;
+  font-weight: 700;
+  line-height: .8em;
+  z-index:2;
 }
 
 .hiro_slashes{
-  letter-spacing: -5.5px;
+  letter-spacing: -14.5px;
 }
 
 .hiro_characters{
