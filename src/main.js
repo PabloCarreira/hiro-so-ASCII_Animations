@@ -11,7 +11,7 @@ controls.addEventListener('mouseout', () => {controls.style.opacity = '.25'})
 import * as program from './programs/demos/doom_flame_customized.js'
 // const p = window.parent;
 
-let fpsValue = 12;
+let fpsValue = 24;
 
 let buttonFPS12 = document.querySelector('#buttonFPS12')
 let buttonFPS24 = document.querySelector('#buttonFPS24')
