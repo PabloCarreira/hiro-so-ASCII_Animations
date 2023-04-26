@@ -9,7 +9,7 @@ import { clamp, map } from '/src/modules/num.js'
 import { CSS4 } from '/src/modules/color.js'
 import { mix, smoothstep } from '/src/modules/num.js'
 
-export const settings = { fps : 30, }
+export const settings = { }
 
 const { min, max, sin, floor } = Math
 
