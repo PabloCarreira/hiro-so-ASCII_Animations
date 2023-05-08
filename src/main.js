@@ -12,7 +12,6 @@ const settings = {
 };
 
 
-
 // Boot (returns a promise)
 run(program, settings).catch(function (e) {
   console.warn(e.message);

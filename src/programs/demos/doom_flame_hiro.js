@@ -5,9 +5,8 @@
 @desc   Oldschool flame effect
 */
 
-import { clamp, map } from '/src/modules/num.js'
-import { CSS4 } from '/src/modules/color.js'
-import { mix, smoothstep } from '/src/modules/num.js'
+import { clamp, map } from '../../modules/num.js'
+import { mix, smoothstep } from '../../modules/num.js'
 
 let programValues = {value01:12};
 let animationOff = false;

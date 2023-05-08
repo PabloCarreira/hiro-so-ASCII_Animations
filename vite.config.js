@@ -5,6 +5,7 @@ const { defineConfig } = require('vite')
 module.exports = defineConfig({
   build: {
     minify: false,
+    polyfillModulePreload: false,
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html')
