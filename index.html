@@ -17,21 +17,17 @@
     </style>
   </head>
   <body>
-    <div class="play_holder">
-      <pre id="ASCII-Holder" class="flameAnimation"></pre>
+    <div class="hero_background_animation_holder">
+      <pre id="ASCII-Holder" class="flame_animation"></pre>
     </div>
+    
     <h1 class="h1-rebrand-v2">BUILD WEB3 ON BITCOIN.</h1>
 
-    <div class="controlsHolder">
-      <input class="slider01" id="sliderValue01" type="range" min="1" max="40" step="1">
-      <label class="label01" for="sliderValue01">Volume <output id="valuePrinted"></output></label>
-      <input class="input01" type="text" id="inputValue01" placeholder="...::/\\+=*abcdef01XYZ#">
-      <label class="label02" for="sliderValue01">characters</label>
-      <input id="buttonFPS12" type="button" value="12 FPS">
-      <input id="buttonFPS24" type="button" value="24 FPS">
-      <input id="buttonFPS30" type="button" value="30 FPS">
-      <input id="buttonPause" type="button" value="PAUSE">
+    <div class="animation_toggler_holder">
+      <input  class="animation_toggler" id="buttonPause" type="button" value="ASCII:[ON]">
     </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

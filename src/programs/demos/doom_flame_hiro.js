@@ -9,34 +9,54 @@ import { clamp, map } from '/src/modules/num.js'
 import { CSS4 } from '/src/modules/color.js'
 import { mix, smoothstep } from '/src/modules/num.js'
 
-export const settings = { }
+let programValues = {value01:12};
+let animationOff = false;
+
+export const settings = {  }
 
 const { min, max, sin, floor } = Math
 
 let flame = ' ︙·://\|*#"₿_hiro#+₿'
 let cols, rows
-let value01 = 10;
-
-let slider = document.querySelector('#sliderValue01')
-let characters = document.querySelector('#inputValue01')
-let valuePrinted = document.querySelector('#valuePrinted')
-
-valuePrinted.textContent = value01
-
-slider.addEventListener('input', function () {
-	value01 = slider.value;
-	valuePrinted.textContent = slider.value
-}, false);
-
-characters.addEventListener('change', function (e){
-	flame = e.target.value
-})
 
 const noise = valueNoise()
 
 const data = []
 
+buttonPause.onclick = () => {
+	animationOff = !animationOff;
+
+	if(animationOff){
+		document.querySelector('#buttonPause').value = "ASCII:[OFF]";
+		gsap.to(programValues, {
+			duration:.5, 
+			value01:0,
+			ease:'power4.out'
+		})
+		document.querySelector('#ASCII-Holder').classList.toggle("deactive");
+		setTimeout(	callPause, 500);
+
+
+	  }else if(!animationOff){
+		document.querySelector('#buttonPause').value = "ASCII:[ON]";
+		document.querySelector('#ASCII-Holder').classList.toggle("deactive");
+		document.querySelector('#ASCII-Holder').dispatchEvent(new Event('pause'));
+		gsap.to(programValues, {
+			duration:.5, 
+			value01:12,
+			ease:'power4.out'
+		})
+	  }
+
+	}
+
+function callPause() {
+	console.log("PAUSE FUNCTIONA CALLED")
+	document.querySelector('#ASCII-Holder').dispatchEvent(new Event('pause'));
+}
+
 export function pre(context, cursor, buffer) {
+
 
 	// Detect resize (and reset buffer, in case)
 	if (cols != context.cols || rows != context.rows) {
@@ -51,7 +71,7 @@ export function pre(context, cursor, buffer) {
 		const t = context.time * 0.0015
 		const last = cols * (rows - 1)
 		for (let i=0; i<cols; i++) {
-			const val = floor(map(noise(i * 0.05, t), 0, 1, 5, value01))
+			const val = floor(map(noise(i * 0.05, t), 0, 1, 5, programValues.value01))
 			data[last + i] = min(val, data[last + i] + 2)
 		}
 	} else {
@@ -139,7 +159,5 @@ function valueNoise() {
 	}
 }
 
-// import { drawInfo } from '/src/modules/drawbox.js'
 export function post(context, cursor, buffer) {
-	// drawInfo(context, cursor, buffer)
 }

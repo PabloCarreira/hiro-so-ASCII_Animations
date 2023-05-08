@@ -1,28 +1,9 @@
-// Import the program runner
 import { run } from './run.js';
 import '../css/style.css';
 
-let controls = document.querySelector('.controlsHolder');
-controls.addEventListener('mouseover', () => {
-  controls.style.opacity = '1';
-});
-controls.addEventListener('mouseout', () => {
-  controls.style.opacity = '.25';
-});
+import * as program from './programs/demos/doom_flame_hiro.js';
 
-// Import a custom program; with at least a main() function exported
-// import * as program from './wireframe_cube.js'
-import * as program from './programs/demos/doom_flame_customized.js';
-// const p = window.parent;
-
-let fpsValue = 30;
-
-let buttonFPS12 = document.querySelector('#buttonFPS12');
-let buttonFPS24 = document.querySelector('#buttonFPS24');
-let buttonFPS30 = document.querySelector('#buttonFPS30');
-
-// Run settings can override the default- and program seetings.
-// See the API for details.
+let fpsValue = 12;
 const settings = {
   element: document.querySelector('#ASCII-Holder'),
   backgroundColor: 'transparent',
@@ -30,27 +11,7 @@ const settings = {
   fps: fpsValue,
 };
 
-buttonFPS12.onclick = () => {
-  window.location.replace(
-    'https://pablocarreira.github.io/hiro-so-ASCII_Animations/FPS12/'
-  );
-};
 
-buttonFPS24.onclick = () => {
-  window.location.replace(
-    'https://pablocarreira.github.io/hiro-so-ASCII_Animations/FPS24/'
-  );
-};
-
-buttonFPS30.onclick = () => {
-  window.location.replace(
-    'https://pablocarreira.github.io/hiro-so-ASCII_Animations/FPS30/'
-  );
-};
-
-buttonPause.onclick = () => {
-  document.querySelector('#ASCII-Holder').dispatchEvent(new Event('pause'));
-};
 
 // Boot (returns a promise)
 run(program, settings).catch(function (e) {

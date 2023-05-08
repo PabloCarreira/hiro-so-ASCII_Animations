@@ -4,6 +4,7 @@ const { defineConfig } = require('vite')
 
 module.exports = defineConfig({
   build: {
+    minify: false,
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html')
